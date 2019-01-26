@@ -15,11 +15,11 @@
 				// console.log( "Time: " + commit[0].commit.committer.date );
 				// console.log( "Message: " + commit[0].commit.message );
 				// console.log( "URL: " + commit[0].html_url );
-				
-				$('main').prepend( '<p><a href="' + commit[0].html_url + '" target="_blank">URL</a></p>');
-				$('main').prepend( '<pre class="git-message">Message: ' + commit[0].commit.message + '</pre>');
-				$('main').prepend( '<p>' + ($.timeago(commit[0].commit.committer.date))+ '</p>');
-				$('main').prepend( '<p>Last Update:</p>');
+				$('main').prepend( '<div class="clumsy-update"><p>Last Update:</p>'
+					+ '<p>' + ($.timeago(commit[0].commit.committer.date))+ '</p>'
+					+ '<pre class="clumsy-update-message">Message: ' + commit[0].commit.message + '</pre>'
+					+ '<p><a href="' + commit[0].html_url + '" target="_blank">URL</a></p></div>'
+				);
 			});
 		});
 	</script>
