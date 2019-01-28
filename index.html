@@ -6,28 +6,12 @@
 	<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 	<script src="jquery-3.3.1.min.js" type="text/javascript"></script>
 	<script src="jquery.timeago.min.js" type="text/javascript"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var githubAPI = "https://api.github.com/repos/loikein/loikein.github.io/commits?page=1&per_page=1";
-			$("time.timeago").timeago();
-			$.get(githubAPI, function(commit) {
-				// console.log( commit);
-				// console.log( "Time: " + commit[0].commit.committer.date );
-				// console.log( "Message: " + commit[0].commit.message );
-				// console.log( "URL: " + commit[0].html_url );
-				$('main').prepend( '<div class="clumsy-update"><p>Last Update:</p>'
-					+ '<p>' + ($.timeago(commit[0].commit.committer.date))+ '</p>'
-					+ '<pre class="clumsy-update-message">Message: ' + commit[0].commit.message + '</pre>'
-					+ '<p><a href="' + commit[0].html_url + '" target="_blank">URL</a></p></div>'
-				);
-			});
-		});
-	</script>
+	<script src="clumsy-update.js" type="text/javascript"></script>
 </head>
 <body>
 <header>Clumsy Update</header>
 <main>
-	<p>hello world</p>
+	<h2 id="last-update">Last Update</h2>
 </main>
 </body>
 </html>
